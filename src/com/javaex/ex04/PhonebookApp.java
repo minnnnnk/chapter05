@@ -1,4 +1,4 @@
-package com.javaex.ex03;
+package com.javaex.ex04;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -8,7 +8,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ex01 {
+import com.javaex.ex03.Person;
+
+public class PhonebookApp {
 
 	public static void main(String[] args) throws IOException {
 		//split사용 
@@ -27,25 +29,31 @@ public class Ex01 {
 				break;
 			}
 			String[] str1 = str.split(",");
-			pList.add(new Person(str1[0],str1[1],str1[2]));
+			
 			
 			String name = str1[0];
 			String hp = str1[1];
 			String company = str1[2];
 			
-			System.out.println("이름: "+ name);
-			System.out.println("핸드폰: "+ hp);
-			System.out.println("회사: "+ company);
-			System.out.println("");
+			Person person = new Person(name, hp, company);
+			pList.add(person);
 			
 		}
-		
 	
 		
+		for(Person person : pList) {
+			System.out.println("이름: " +person.getName());
+			System.out.println("핸드폰: " +person.getHp());
+			System.out.println("회사 :" +person.getCompany());
+			System.out.println("");
+		}
+	
+		System.out.println(pList.get(0).getName());
 		
 		
 		
 		br.close();
-	}
-
+		
+		
+	}	
 }

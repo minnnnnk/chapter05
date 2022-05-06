@@ -24,8 +24,7 @@ public class Ex03 {
 		InputStreamReader ir = new InputStreamReader(in);
 		BufferedReader br = new BufferedReader(ir);
 		List<Person> pList = new ArrayList<Person>();
-		Person p = new Person("김민규","010-2300-2040","02-0301-4203");
-		pList.add(p);
+		
 		OutputStream out = new FileOutputStream("C:\\javaStudy\\file\\PhoneDB-copy.txt");
 		OutputStreamWriter osr = new OutputStreamWriter(out);
 		BufferedWriter bw = new BufferedWriter(osr);
@@ -44,6 +43,8 @@ public class Ex03 {
 			bw.write(str);
 			bw.newLine();
 		}
+		Person p = new Person("김민규","010-2300-2040","02-0301-4203");
+		pList.add(p);
 		bw.write("김민규,010-2300-2040,02-0301-4203");
 		
 		//데이터 추가
